@@ -28,6 +28,7 @@ public class CommonFunctions {
     public static String actualVehiclePriceFromUsedCarSearchResultsPage = "";
     public static String actualVehicleImageFromNewCarSearchResultsPage = "";
     public static String actualVehicleModelFromNewCarSearchResultsPage = "";
+    public static String winHandleBefore="";
 
     public void wait_explicit_till_element_loaded(By by){
         WebDriverWait waitnew=new WebDriverWait(driver,20);

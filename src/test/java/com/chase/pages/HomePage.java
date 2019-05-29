@@ -21,7 +21,6 @@ public class HomePage extends CommonFunctions {
     By AutoLoansMenuLocator = By.xpath(HomePageProperty.AutoLoansMenu);
 
 
-
     private WebDriver driver;
 
     public HomePage(WebDriver driver){
@@ -30,6 +29,7 @@ public class HomePage extends CommonFunctions {
     }
 
     public void verifyLeftSideTitle(String expectedLeftSideTitle) throws InterruptedException {
+        isElementPresentOnWebPage(AutoLoansMenuLocator,"Auto Lonas menu"," present on the chase portal home screen");
         String actualLeftSideTitle = getAnyTextFromWebPage(LeftSideTitleLocator);
         Assert.assertTrue(compareAnyText(actualLeftSideTitle,expectedLeftSideTitle));
     }
@@ -56,15 +56,6 @@ public class HomePage extends CommonFunctions {
 
     public void enterZipCodeForUsedCar(String zipcode) throws InterruptedException {
         enterText(UsedCarZipcodeBoxLocator,zipcode);
-    }
-
-    public void clickOnAutoLoansMenu(){
-        click(AutoLoansMenuLocator);
-
-        for(String winHandle : driver.getWindowHandles()){
-            System.out.println(" &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& "+winHandle);
-            driver.switchTo().window(winHandle);
-        }
     }
 
 }

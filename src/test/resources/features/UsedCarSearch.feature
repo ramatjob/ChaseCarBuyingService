@@ -1,6 +1,6 @@
 Feature: Test the Used Car Search functionality of Chase Portal
 
-  @TestCase1
+  @TestCase2
   Scenario Outline: Searching for the used cars in chase portal home screen
     Given I launch the Chase Portal home page
     Then I verify the "<Left Side Title>"

@@ -46,11 +46,20 @@ So open the `overview-features.html` in any browser, it will show you the full t
 
 ### Epic details ###
 
-   Epic Desciption                                                     | Feature file                                                | WAGA requirements                                |
-   ------------------------------------------------------------------- | ----------------------------------------------------------- | -----------------------------------------------  |
-   1. Check the controls in the Chase Car Buying Service home screen   | Tested this in @TestCase1 in the NewCarSearch.feature file  | Perceivable,Operable,Understandable,Robust       |
-   ------------------------------------------------------------------- | ----------------------------------------------------------- | -----------------------------------------------  |
-   2. Check the new car search functionality                           | Tested this in @TestCase1 in the NewCarSearch.feature file  | Perceivable,Operable,Understandable,Robust       |
-   ------------------------------------------------------------------- | ----------------------------------------------------------- | -----------------------------------------------  |
-   3. Check the used car search functionality                          | Tested this in @TestCase2 in the UsedCarSearch.feature file | Perceivable,Operable,Understandable,Robust       |
-   ------------------------------------------------------------------- | ----------------------------------------------------------- | -----------------------------------------------  |
+   ```
+   Epic Desciption: 1. Check the controls in the Chase Car Buying Service home screen
+   Feature file: Tested this epic in @TestCase1 in the NewCarSearch.feature file
+   WAGA requirements: Perceivable,Operable,Understandable,Robust
+   ```
+
+   ```
+   Epic Desciption: 2. Check the new car search functionality
+   Feature file: Tested this epic in @TestCase1 in the NewCarSearch.feature file
+   WAGA requirements: Perceivable,Operable,Understandable,Robust
+   ```
+
+   ```
+   Epic Desciption: 3. Check the used car search functionality
+   Feature file: Tested this epic in @TestCase2 in the UsedCarSearch.feature  file
+   WAGA requirements: Perceivable,Operable,Understandable,Robust
+   ```

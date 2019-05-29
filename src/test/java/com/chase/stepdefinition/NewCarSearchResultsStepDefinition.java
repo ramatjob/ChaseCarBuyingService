@@ -3,7 +3,6 @@ package com.chase.stepdefinition;
 import com.chase.pages.NewCarSearchResultsPage;
 import com.chase.utility.TestBase;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;
 

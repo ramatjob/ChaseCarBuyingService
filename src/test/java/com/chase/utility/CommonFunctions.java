@@ -28,7 +28,10 @@ public class CommonFunctions {
     public static String actualVehiclePriceFromUsedCarSearchResultsPage = "";
     public static String actualVehicleImageFromNewCarSearchResultsPage = "";
     public static String actualVehicleModelFromNewCarSearchResultsPage = "";
-    public static String winHandleBefore="";
+    public static String vehicleSeriesNameFromNewCarSearchResultsPage="";
+    public static String vehiclePriceTitleFromNewCarSearchResultsPage="";
+    public static String vehiclePriceValueFromNewCarSearchResultsPage="";
+    public static String vehicleMakeYearFromNewCarSearchResultsPage="";
 
     public void wait_explicit_till_element_loaded(By by){
         WebDriverWait waitnew=new WebDriverWait(driver,20);
@@ -39,18 +42,6 @@ public class CommonFunctions {
         WebDriverWait waitnew=new WebDriverWait(driver,20);
         waitnew.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
     }
-
-//    public void isElementClickableOnWebPage(By by){
-//        WebDriverWait waitnew=new WebDriverWait(driver,20);
-//        waitnew.until(ExpectedConditions.elementToBeClickable(by));
-//    }
-
-//    public void switchToFrame(String frameName) throws InterruptedException {
-//        Thread.sleep(5000);
-//        driver.switchTo().defaultContent();
-//        WebDriverWait waitnew=new WebDriverWait(driver,20);
-//        waitnew.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameName));
-//    }
 
     public void enterText(By byProp, String searchText) {
         wait_explicit_till_element_loaded(byProp);
@@ -76,16 +67,6 @@ public class CommonFunctions {
         wait_explicit_till_element_loaded(xpath);
         return driver.findElement(By.xpath(xpath)).getText();
     }
-
-
-//    public void selectAnyValuFromDropdown(By byProp, String visibleText){
-//        wait_explicit_till_element_loaded(byProp);
-//        Select select = new Select(driver.findElement(byProp));
-//        List list = select.getOptions();
-//        for(Object ele: list){
-//           System.out.println(ele);
-//        }
-//    }
 
     public void selectAnyVlueFromDropDown(By byProp1, By byProp2) throws InterruptedException {
         wait_explicit_till_element_loaded(byProp1);
@@ -142,13 +123,6 @@ public class CommonFunctions {
         return finalResult;
     }
 
-//    public String getEmailStatus(By byProp){
-//        List<WebElement> list = driver.findElements(byProp);
-//        String str = list.get(1).getText();
-//        String[] strArray = str.split(" ");
-//        return strArray[2];
-//    }
-
     public String getValueOfAttribute(By byProp,String attributeProperty){
         wait_explicit_till_element_loaded(byProp);
         return driver.findElement(byProp).getAttribute(attributeProperty);
@@ -159,8 +133,8 @@ public class CommonFunctions {
         return driver.findElement(By.xpath(xpath)).getAttribute(attributeProperty);
     }
 
-//    public void wait_implicit_till_window_load(){
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-//    }
+    public void wait_implicit_till_window_load(){
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
 
 }

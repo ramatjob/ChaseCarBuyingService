@@ -12,6 +12,10 @@
       And I click on the "<Required Car Link>"
       Then I can see a new page which shows the full details of selected car
       And I get the full details of car
+      Then I can compare car image and model against the details of car search results
+      And I click on the Build And Price button
+      And I get the car price from Build And Price page
+      Then I compare the car price against the details of car search results
       And I close the browser
 
       Examples:

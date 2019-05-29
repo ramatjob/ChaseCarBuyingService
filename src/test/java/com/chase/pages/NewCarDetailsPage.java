@@ -9,7 +9,15 @@ import org.testng.Assert;
 public class NewCarDetailsPage extends CommonFunctions {
     By CarDetailsLocator = By.xpath(NewCarDetailsPagePageProperty.CarDetails);
     By CustomerPrcingButtonLocator = By.xpath(NewCarDetailsPagePageProperty.CustomerPrcingButton);
+    By CarDetailsHeaderLocator = By.xpath(NewCarDetailsPagePageProperty.CarDetailsHeader);
+    By CarImageLocator = By.xpath(NewCarDetailsPagePageProperty.CarImage);
+    By MSRPValueLocator = By.xpath(NewCarDetailsPagePageProperty.MSRPValue);
+    By MarketAverageValueLocator = By.xpath(NewCarDetailsPagePageProperty.MarketAverageValue);
+    By CustomerPricingLinkLocator = By.xpath(NewCarDetailsPagePageProperty.CustomerPricingLink);
+    By BuildAndPriceButtonLocator = By.xpath(NewCarDetailsPagePageProperty.BuildAndPriceButton);
 
+    private String carImage="";
+    private String carModel="";
 
     private WebDriver driver;
 
@@ -19,17 +27,30 @@ public class NewCarDetailsPage extends CommonFunctions {
     }
 
     public void getCarDetails() throws InterruptedException {
-        String carImage = getValueOfAttribute(CarDetailsLocator,"src");
-        String carModel = getValueOfAttribute(CarDetailsLocator,"alt");
-        String[] imageArray = actualVehicleImageFromNewCarSearchResultsPage.split("/");
+        carImage = getValueOfAttribute(CarDetailsLocator,"src");
+        carModel = getValueOfAttribute(CarDetailsLocator,"alt");
+    }
 
+    public void compareCarImageAndModel(){
+        String[] imageArray = actualVehicleImageFromNewCarSearchResultsPage.split("/");
         Assert.assertTrue(containsAnyText(imageArray[imageArray.length-1], carImage ));
         Assert.assertTrue(containsAnyText(carModel, actualVehicleModelFromNewCarSearchResultsPage));
     }
 
     public void verifyThePageProperties() throws InterruptedException {
+        wait_implicit_till_window_load();
         isElementPresentOnWebPage(CustomerPrcingButtonLocator,"Customer Pricing button ","On Car Search Detail screen");
+        isElementPresentOnWebPage(CarDetailsHeaderLocator,"Car Details Header ","On Car Search Detail screen");
+        isElementPresentOnWebPage(CarImageLocator,"Car Image ","On Car Search Detail screen");
+        isElementPresentOnWebPage(MSRPValueLocator,"MSRP Value ","On Car Search Detail screen");
+        isElementPresentOnWebPage(MarketAverageValueLocator,"Market Average Value ","On Car Search Detail screen");
+        isElementPresentOnWebPage(CustomerPricingLinkLocator,"Customer Pricing Link ","On Car Search Detail screen");
+        isElementPresentOnWebPage(BuildAndPriceButtonLocator,"Build And Price Button ","On Car Search Detail screen");
 
+    }
+
+    public void clickOnBuildAndPriceButton(){
+        click(BuildAndPriceButtonLocator);
     }
 
 

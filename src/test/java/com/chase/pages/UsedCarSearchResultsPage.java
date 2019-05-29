@@ -23,6 +23,7 @@ public class UsedCarSearchResultsPage extends CommonFunctions {
     }
 
     public void verifyThePropertiesOnThePage(){
+        wait_implicit_till_window_load();
         int resultsCount = getTotalResultsCount(TotalResultsListLocator);
         if(resultsCount > 0) {
             isElementPresentOnWebPage(VehicleModelLocator,"Vehicle Model "," on the Used Car Serach Results Page");

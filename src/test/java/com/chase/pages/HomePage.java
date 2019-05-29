@@ -19,6 +19,17 @@ public class HomePage extends CommonFunctions {
     By UsedCarZipcodeBoxLocator = By.xpath(HomePageProperty.UsedCarZipcodeBox);
     By ShopUsedCarsButtonLocator = By.xpath(HomePageProperty.ShopUsedCarsButton);
     By AutoLoansMenuLocator = By.xpath(HomePageProperty.AutoLoansMenu);
+    By ChaseSymbolLocator = By.xpath(HomePageProperty.ChaseSymbol);
+    By RightSideTitle1Locator = By.xpath(HomePageProperty.RightSideTitle1);
+    By RightSideTitle2Locator = By.xpath(HomePageProperty.RightSideTitle2);
+    By CarBuyingHomeMenuLocator = By.xpath(HomePageProperty.CarBuyingHomeMenu);
+    By NewCarSearchMenuLocator = By.xpath(HomePageProperty.NewCarSearchMenu);
+    By UsedCarSearchMenuLocator = By.xpath(HomePageProperty.UsedCarSearchMenu);
+    By MoneySaveTitleLocator = By.xpath(HomePageProperty.MoneySaveTitle);
+    By NewCarSearchTitleLocator = By.xpath(HomePageProperty.NewCarSearchTitle);
+    By UsedCarSearchTitleLocator = By.xpath(HomePageProperty.UsedCarSearchTitle);
+
+
 
 
     private WebDriver driver;
@@ -29,7 +40,24 @@ public class HomePage extends CommonFunctions {
     }
 
     public void verifyLeftSideTitle(String expectedLeftSideTitle) throws InterruptedException {
-        isElementPresentOnWebPage(AutoLoansMenuLocator,"Auto Lonas menu"," present on the chase portal home screen");
+        isElementPresentOnWebPage(ChaseSymbolLocator,"Chase symbol"," present on the chase portal home screen");
+        isElementPresentOnWebPage(RightSideTitle1Locator,"Right side Title1"," present on the chase portal home screen");
+        isElementPresentOnWebPage(RightSideTitle2Locator,"Right side Title2"," present on the chase portal home screen");
+        isElementPresentOnWebPage(CarBuyingHomeMenuLocator,"Car Buying Home Menu"," present on the chase portal home screen");
+        isElementPresentOnWebPage(NewCarSearchMenuLocator,"New Car Search Menu"," present on the chase portal home screen");
+        isElementPresentOnWebPage(UsedCarSearchMenuLocator,"Used Car Search Menu"," present on the chase portal home screen");
+        isElementPresentOnWebPage(MoneySaveTitleLocator,"Money Save Title"," present on the chase portal home screen");
+        isElementPresentOnWebPage(NewCarSearchTitleLocator,"NewCar Search Title"," present on the chase portal home screen");
+        isElementPresentOnWebPage(UsedCarSearchTitleLocator,"Used Car Search Title"," present on the chase portal home screen");
+        isElementPresentOnWebPage(LeftSideTitleLocator,"Left Side Title"," present on the chase portal home screen");
+        isElementPresentOnWebPage(NewCarSelectMakeDropdownLocator,"New Car Select Make Dropdown"," present on the chase portal home screen");
+        isElementPresentOnWebPage(NewCarZipcodeBoxLocator,"New Car Zipcode Box"," present on the chase portal home screen");
+        isElementPresentOnWebPage(ShopNewCarsButtonLocator,"Shop New Cars Button"," present on the chase portal home screen");
+        isElementPresentOnWebPage(UsedCarSelectMakeDropdownLocator,"Used Car Select Make Dropdown"," present on the chase portal home screen");
+        isElementPresentOnWebPage(UsedCarZipcodeBoxLocator,"Used Car Zipcode Box"," present on the chase portal home screen");
+        isElementPresentOnWebPage(ShopUsedCarsButtonLocator,"Shop Used Cars Button"," present on the chase portal home screen");
+        isElementPresentOnWebPage(AutoLoansMenuLocator,"Auto Loans Menu"," present on the chase portal home screen");
+
         String actualLeftSideTitle = getAnyTextFromWebPage(LeftSideTitleLocator);
         Assert.assertTrue(compareAnyText(actualLeftSideTitle,expectedLeftSideTitle));
     }

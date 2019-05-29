@@ -47,9 +47,28 @@ public class NewCarSearchResultsPage extends CommonFunctions {
         String firstXpath = "//div[@class='row row-2 padding-top-2']/div[";
         String lastXpath = "]//div[@data-qa='Img']//img";
         String finalXpath = firstXpath+requiredLinkNumber+lastXpath;
-
         actualVehicleImageFromNewCarSearchResultsPage = getValueOfAttribute(finalXpath,"src");
         actualVehicleModelFromNewCarSearchResultsPage =getValueOfAttribute(finalXpath,"alt");
+
+        String seriesNameFirstXpath = "//div[@class='row row-2 padding-top-2']/div[";
+        String seriesNameLastXpath = "]//div[@data-qa='CardContent']//h4";
+        String finalSeriesNameXpath = seriesNameFirstXpath+requiredLinkNumber+seriesNameLastXpath;
+        vehicleSeriesNameFromNewCarSearchResultsPage = getAnyTextFromWebPage(finalSeriesNameXpath);
+
+        String priceTitleFirstXpath = "//div[@class='row row-2 padding-top-2']/div[";
+        String priceTitleLastXpath = "]//div[@data-qa='CardContent']//div[@class='label-block-title']";
+        String finalPriceTitleXpath = priceTitleFirstXpath+requiredLinkNumber+priceTitleLastXpath;
+        vehiclePriceTitleFromNewCarSearchResultsPage = getAnyTextFromWebPage(finalPriceTitleXpath);
+
+        String priceValueFirstXpath = "//div[@class='row row-2 padding-top-2']/div[";
+        String priceValueLastXpath = "]//div[@data-qa='CardContent']//div[@class='label-block-text']//span";
+        String finalPriceValueXpath = priceValueFirstXpath+requiredLinkNumber+priceValueLastXpath;
+        vehiclePriceValueFromNewCarSearchResultsPage = getAnyTextFromWebPage(finalPriceValueXpath);
+
+        String makeYearFirstXpath = "//div[@class='row row-2 padding-top-2']/div[";
+        String makeYearLastXpath = "]/a";
+        String finalMakeYearXpath = makeYearFirstXpath+requiredLinkNumber+makeYearLastXpath;
+        vehicleMakeYearFromNewCarSearchResultsPage = getValueOfAttribute(finalMakeYearXpath,"data-analytics-model-year");
     }
 
 }

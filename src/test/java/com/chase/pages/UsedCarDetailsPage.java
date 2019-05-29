@@ -44,7 +44,6 @@ public class UsedCarDetailsPage extends CommonFunctions {
     public void verifyThePageProperties(){
         isElementPresentOnWebPage(CheckAvailabilityButtonLocator,"Check Availability button ","On Car Search Detail screen");
         isElementPresentOnWebPage(TruPriceButtonLocator,"True Price button ","On Car Search Detail screen");
-
     }
 
 

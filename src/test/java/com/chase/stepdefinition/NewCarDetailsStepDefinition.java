@@ -28,6 +28,16 @@ public class NewCarDetailsStepDefinition {
         newCarDetailsPageObject.getCarDetails();
     }
 
+    @Then("^I can compare car image and model against the details of car search results$")
+    public void compareCarImageAndModel() throws InterruptedException {
+        newCarDetailsPageObject.compareCarImageAndModel();
+    }
+
+    @And("^I click on the Build And Price button$")
+    public void clickOnBuildAndPriceButton() throws InterruptedException {
+        newCarDetailsPageObject.clickOnBuildAndPriceButton();
+    }
+
     @And("^I close the browser$")
     public void closeBrowser(){
         testBase.tearDown();

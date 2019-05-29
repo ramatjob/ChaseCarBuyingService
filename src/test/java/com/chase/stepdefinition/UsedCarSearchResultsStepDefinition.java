@@ -1,7 +1,6 @@
 package com.chase.stepdefinition;
 
 
-import com.chase.pages.NewCarSearchResultsPage;
 import com.chase.pages.UsedCarSearchResultsPage;
 import com.chase.utility.TestBase;
 import cucumber.api.java.en.And;

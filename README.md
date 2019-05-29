@@ -42,3 +42,12 @@ Under the project base folder, you can find the `target` folder (In my case, it 
 For example, in my local machine, `ChaseCarBuyingService` project is kept under `C:\MyProjects\ChaseCarBuyingService`. So the report will be available in the `C:\MyProjects\ChaseCarBuyingService\target\cucumber-reports\advanced-reports\cucumber-html-reports\overview-features.html`
 
 So open the `overview-features.html` in any browser, it will show you the full test execution report
+
+
+### Epic details ###
+
+   Epic Desciption                                                     | Feature file                                                | WAGA requirements                                |
+   ------------------------------------------------------------------- | ----------------------------------------------------------- | -----------------------------------------------  |
+   1. Check the controls in the Chase Car Buying Service home screen   | Tested this in @TestCase1 in the NewCarSearch.feature file  | Perceivable,Operable,Understandable,Robust       |
+   2. Check the new car search functionality                           | Tested this in @TestCase1 in the NewCarSearch.feature file  | Perceivable,Operable,Understandable,Robust       |
+   3. Check the used car search functionality                          | Tested this in @TestCase2 in the UsedCarSearch.feature file | Perceivable,Operable,Understandable,Robust       |

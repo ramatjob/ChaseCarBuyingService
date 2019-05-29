@@ -49,5 +49,8 @@ So open the `overview-features.html` in any browser, it will show you the full t
    Epic Desciption                                                     | Feature file                                                | WAGA requirements                                |
    ------------------------------------------------------------------- | ----------------------------------------------------------- | -----------------------------------------------  |
    1. Check the controls in the Chase Car Buying Service home screen   | Tested this in @TestCase1 in the NewCarSearch.feature file  | Perceivable,Operable,Understandable,Robust       |
+   ------------------------------------------------------------------- | ----------------------------------------------------------- | -----------------------------------------------  |
    2. Check the new car search functionality                           | Tested this in @TestCase1 in the NewCarSearch.feature file  | Perceivable,Operable,Understandable,Robust       |
+   ------------------------------------------------------------------- | ----------------------------------------------------------- | -----------------------------------------------  |
    3. Check the used car search functionality                          | Tested this in @TestCase2 in the UsedCarSearch.feature file | Perceivable,Operable,Understandable,Robust       |
+   ------------------------------------------------------------------- | ----------------------------------------------------------- | -----------------------------------------------  |

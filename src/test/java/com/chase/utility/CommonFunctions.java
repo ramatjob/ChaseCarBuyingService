@@ -25,9 +25,7 @@ public class CommonFunctions {
     public static String actualVehicleModelFromUsedCarSearchResultsPage = "";
     public static String actualVehicleMileageFromUsedCarSearchResultsPage = "";
     public static String actualVehicleInteriorFromUsedCarSearchResultsPage = "";
-    public static String actualVehicleExteriorFromUsedCarSearchResultsPage = "";
     public static String actualVehiclePriceFromUsedCarSearchResultsPage = "";
-
     public static String actualVehicleImageFromNewCarSearchResultsPage = "";
     public static String actualVehicleModelFromNewCarSearchResultsPage = "";
 
@@ -36,17 +34,22 @@ public class CommonFunctions {
         waitnew.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
-    public void isElementClickableOnWebPage(By by){
+    public void wait_explicit_till_element_loaded(String xpath){
         WebDriverWait waitnew=new WebDriverWait(driver,20);
-        waitnew.until(ExpectedConditions.elementToBeClickable(by));
+        waitnew.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
     }
 
-    public void switchToFrame(String frameName) throws InterruptedException {
-        Thread.sleep(5000);
-        driver.switchTo().defaultContent();
-        WebDriverWait waitnew=new WebDriverWait(driver,20);
-        waitnew.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameName));
-    }
+//    public void isElementClickableOnWebPage(By by){
+//        WebDriverWait waitnew=new WebDriverWait(driver,20);
+//        waitnew.until(ExpectedConditions.elementToBeClickable(by));
+//    }
+
+//    public void switchToFrame(String frameName) throws InterruptedException {
+//        Thread.sleep(5000);
+//        driver.switchTo().defaultContent();
+//        WebDriverWait waitnew=new WebDriverWait(driver,20);
+//        waitnew.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameName));
+//    }
 
     public void enterText(By byProp, String searchText) {
         wait_explicit_till_element_loaded(byProp);
@@ -58,21 +61,30 @@ public class CommonFunctions {
         driver.findElement(byProp).click();
     }
 
+    public void click(String xpath) {
+        wait_explicit_till_element_loaded(xpath);
+        driver.findElement(By.xpath(xpath)).click();
+    }
+
     public String getAnyTextFromWebPage(By prop){
         wait_explicit_till_element_loaded(prop);
         return driver.findElement(prop).getText();
     }
 
-    public void selectAnyValuFromDropdown(By byProp, String visibleText){
-        wait_explicit_till_element_loaded(byProp);
-        Select select = new Select(driver.findElement(byProp));
-//        select.selectByVisibleText(visibleText);
-//        select.selectByValue("bmw");
-        List list = select.getOptions();
-        for(Object ele: list){
-           System.out.println(ele);
-        }
+    public String getAnyTextFromWebPage(String xpath){
+        wait_explicit_till_element_loaded(xpath);
+        return driver.findElement(By.xpath(xpath)).getText();
     }
+
+
+//    public void selectAnyValuFromDropdown(By byProp, String visibleText){
+//        wait_explicit_till_element_loaded(byProp);
+//        Select select = new Select(driver.findElement(byProp));
+//        List list = select.getOptions();
+//        for(Object ele: list){
+//           System.out.println(ele);
+//        }
+//    }
 
     public void selectAnyVlueFromDropDown(By byProp1, By byProp2) throws InterruptedException {
         wait_explicit_till_element_loaded(byProp1);
@@ -81,16 +93,12 @@ public class CommonFunctions {
         WebElement subElement = driver.findElement(byProp2);
         Actions actions = new Actions(driver);
         actions.moveToElement(mainElement).click().perform();
-        //Thread.sleep(3000);
         actions.moveToElement(subElement).click().perform();
     }
 
     public int getTotalResultsCount(By byProp){
         wait_explicit_till_element_loaded(byProp);
         List<WebElement> weList = driver.findElements(byProp);
-//        for(WebElement we: weList){
-//            System.out.println(we+" &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& "+we.getText()+" &&&&&&&&&&&&&&&&&&&&&&&& ");
-//        }
         return weList.size();
     }
 
@@ -133,20 +141,25 @@ public class CommonFunctions {
         return finalResult;
     }
 
-    public String getEmailStatus(By byProp){
-        List<WebElement> list = driver.findElements(byProp);
-        String str = list.get(1).getText();
-        String[] strArray = str.split(" ");
-        return strArray[2];
-    }
+//    public String getEmailStatus(By byProp){
+//        List<WebElement> list = driver.findElements(byProp);
+//        String str = list.get(1).getText();
+//        String[] strArray = str.split(" ");
+//        return strArray[2];
+//    }
 
     public String getValueOfAttribute(By byProp,String attributeProperty){
         wait_explicit_till_element_loaded(byProp);
         return driver.findElement(byProp).getAttribute(attributeProperty);
     }
 
-    public void wait_implicit_till_window_load(){
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    public String getValueOfAttribute(String xpath,String attributeProperty){
+        wait_explicit_till_element_loaded(xpath);
+        return driver.findElement(By.xpath(xpath)).getAttribute(attributeProperty);
     }
+
+//    public void wait_implicit_till_window_load(){
+//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//    }
 
 }

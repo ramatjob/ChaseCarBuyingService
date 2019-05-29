@@ -23,38 +23,13 @@ public class NewCarSearchResultsStepDefinition {
         newCarSearchResultsPageObject.verifyThePropertiesOnThePage();
     }
 
-    @And("^I get the details of first car link$")
-    public void getTheDetailsOfCarLink() throws InterruptedException {
-        newCarSearchResultsPageObject.getDetailsOfCarLink();
+    @And("^I get the details of \"([^\"]*)\"$")
+    public void getTheDetailsOfCarLink(int requiredLinkNumber) throws InterruptedException {
+        newCarSearchResultsPageObject.getDetailsOfCarLink(requiredLinkNumber);
     }
 
-    @And("^I click on the first car link$")
-    public void clickOnFirstCarLink() throws InterruptedException {
-        newCarSearchResultsPageObject.clickOnFirstCarLink();
+    @And("^I click on the \"([^\"]*)\"$")
+    public void clickOnFirstCarLink(int requiredLinkNumber) throws InterruptedException {
+        newCarSearchResultsPageObject.clickOnFirstCarLink(requiredLinkNumber);
     }
-
-
-//    @Given("^I click on logout button$")
-//    public void clickOnLogoutButton() throws InterruptedException {
-//        driver = testBase.getDriver();
-//        logoutPageObject = new NewCarSearchResultsPage(driver);
-//        logoutPageObject.clickOnLogoutButton();
-//    }
-//
-//    @Then("^I can verify the Login page URL \"([^\"]*)\"$")
-//    public void verifyLoginPageUrl(String expectedLogoutPageUrl){
-//        logoutPageObject.verifyLoginPageURL(expectedLogoutPageUrl);
-//    }
-//
-//    @Then("^I verify that the Username,Password and Signin elements are visible$")
-//    public void verifyUsernamePasswordAndSigninElemnts(){
-//        logoutPageObject.verifyUsernamePasswordAndSigninElements();
-//    }
-//
-//    @And("^I close the browser$")
-//    public void closeBrowser(){
-//        testBase.tearDown();
-//    }
-
-
 }

@@ -2,7 +2,6 @@ package com.chase.stepdefinition;
 
 
 import com.chase.pages.NewCarDetailsPage;
-import com.chase.pages.NewCarSearchResultsPage;
 import com.chase.utility.TestBase;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -27,6 +26,11 @@ public class NewCarDetailsStepDefinition {
     @And("^I get the full details of car$")
     public void getTheFullDetailsOfCar() throws InterruptedException {
         newCarDetailsPageObject.getCarDetails();
+    }
+
+    @And("^I close the browser$")
+    public void closeBrowser(){
+        testBase.tearDown();
     }
 
 

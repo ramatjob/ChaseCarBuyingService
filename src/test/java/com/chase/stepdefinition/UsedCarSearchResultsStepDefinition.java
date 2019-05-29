@@ -22,23 +22,16 @@ public class UsedCarSearchResultsStepDefinition {
         driver = testBase.getDriver();
         usedCarSearchResultsPageObject = new UsedCarSearchResultsPage(driver);
         usedCarSearchResultsPageObject.verifyThePropertiesOnThePage();
-        //Thread.sleep(5000);
     }
 
-    @Then("^I get the details of first used car link$")
-    public void getTheCarDetails() throws InterruptedException {
-        usedCarSearchResultsPageObject.getCarDetails();
-        //Thread.sleep(5000);
+    @And("^I get the details of used \"([^\"]*)\"$")
+    public void getTheCarDetails(int requiredLinkNumber) throws InterruptedException {
+        usedCarSearchResultsPageObject.getCarDetails(requiredLinkNumber);
     }
 
-
-
-
-    @And("^I click on the first used car link$")
-    public void clickOnCarLink() throws InterruptedException {
-        //Thread.sleep(5000);
-        usedCarSearchResultsPageObject.clickOnFirstCarLink();
-        //Thread.sleep(5000);
+    @And("^I click on the used \"([^\"]*)\"$")
+    public void clickOnCarLink(int requiredLinkNumber) throws InterruptedException {
+        usedCarSearchResultsPageObject.clickOnFirstCarLink(requiredLinkNumber);
     }
 
 

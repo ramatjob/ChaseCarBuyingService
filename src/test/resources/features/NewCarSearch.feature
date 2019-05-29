@@ -8,15 +8,13 @@
       And I enter a valid "<ZipCode>"
       And I click on Shop New Cars button
       Then I can see a new page with car results
-      And I get the details of first car link
-      And I click on the first car link
+      And I get the details of "<Required Car Link>"
+      And I click on the "<Required Car Link>"
       Then I can see a new page which shows the full details of selected car
       And I get the full details of car
-
-
-#      And I close the browser
+      And I close the browser
 
       Examples:
-      | Left Side Title           | ZipCode |
-      | Chase Car Buying Service  | 12345   |
+      | Left Side Title           | ZipCode | Required Car Link |
+      | Chase Car Buying Service  | 12345   | 1                 |
 

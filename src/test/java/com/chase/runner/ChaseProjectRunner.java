@@ -14,6 +14,6 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
                 "json:target/cucumber-reports/CucumberTestReport.json",
                 "rerun:target/cucumber-reports/rerun.txt"
         })
-public class VutureProjectRunner extends AbstractTestNGCucumberTests {
+public class ChaseProjectRunner extends AbstractTestNGCucumberTests {
 
 }

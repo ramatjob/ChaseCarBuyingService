@@ -1,5 +1,6 @@
 package com.chase.stepdefinition;
 
+import com.chase.pages.ChaseAutoLoansPage;
 import com.chase.pages.HomePage;
 import com.chase.utility.TestBase;
 import cucumber.api.java.en.And;
@@ -59,6 +60,11 @@ public class HomePageStepDefinition {
     @And("^I enter a valid \"([^\"]*)\" for Used car$")
     public void enterValidZipcodeForUsedCar(String zipcode) throws InterruptedException {
         homePageObject.enterZipCodeForUsedCar(zipcode);
+    }
+
+    @And("^I click on the Auto Loans menu$")
+    public void clickOnAutoLoansMenu() throws InterruptedException {
+        homePageObject.clickOnAutoLoansMenu();
     }
 
 }

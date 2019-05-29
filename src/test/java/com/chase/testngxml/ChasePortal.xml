@@ -3,7 +3,7 @@
 <suite name="Vuture Portal Suite" parallel="false">
     <test name="Vuture Portal Test">
         <classes>
-            <class name="com.chase.runner.VutureProjectRunner"/>
+            <class name="com.chase.runner.ChaseProjectRunner"/>
         </classes>
     </test>
 </suite>

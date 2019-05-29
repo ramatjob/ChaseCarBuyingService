@@ -13,15 +13,15 @@ public class TestBase {
 
     private WebDriver driver;
 
-//    private String browserType = "Chrome";
-//    private static String gridType = "Local";
-//    private static String platformType = "WIN32";
-//    private static String environmentType = "qa";
+    private String browserType = "Chrome";
+    private static String gridType = "Local";
+    private static String platformType = "WIN32";
+    private static String environmentType = "qa";
 
-    private String browserType = System.getProperty("browserType");
-    private static String gridType = System.getProperty("gridType");
-    private static String platformType = System.getProperty("platformType");
-    private static String environmentType = System.getProperty("environmentType");
+//    private String browserType = System.getProperty("browserType");
+//    private static String gridType = System.getProperty("gridType");
+//    private static String platformType = System.getProperty("platformType");
+//    private static String environmentType = System.getProperty("environmentType");
     private static final Logger LOGGER = Logger.getLogger(TestBase.class.getName());
 
     @Before

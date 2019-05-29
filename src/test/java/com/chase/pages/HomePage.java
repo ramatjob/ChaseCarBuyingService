@@ -18,6 +18,7 @@ public class HomePage extends CommonFunctions {
     By UsedCarMakeNameLocator = By.xpath(HomePageProperty.UsedCarMakeName);
     By UsedCarZipcodeBoxLocator = By.xpath(HomePageProperty.UsedCarZipcodeBox);
     By ShopUsedCarsButtonLocator = By.xpath(HomePageProperty.ShopUsedCarsButton);
+    By AutoLoansMenuLocator = By.xpath(HomePageProperty.AutoLoansMenu);
 
 
 
@@ -57,5 +58,13 @@ public class HomePage extends CommonFunctions {
         enterText(UsedCarZipcodeBoxLocator,zipcode);
     }
 
+    public void clickOnAutoLoansMenu(){
+        click(AutoLoansMenuLocator);
+
+        for(String winHandle : driver.getWindowHandles()){
+            System.out.println(" &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& "+winHandle);
+            driver.switchTo().window(winHandle);
+        }
+    }
 
 }

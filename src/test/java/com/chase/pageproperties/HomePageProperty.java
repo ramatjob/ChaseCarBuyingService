@@ -12,7 +12,5 @@ public interface HomePageProperty {
     public String UsedCarZipcodeBox = "//div[@class='usedCarSelector_5ok647 padding-left-md-4 padding-top-md-0 padding-top-4 col-12 col-md-6']//div[@class='text-left']//form[@class='d-flex justify-content-center align-items-center margin-top-3']//label[@class='field-container field-size-md field-layout-float field-theme-dark field-emphasized margin-right-2']//div//input[@placeholder='ZIP Code']";
     public String ShopUsedCarsButton = "//div[contains(text(),'Shop Used Cars')]";
     public String AutoLoansMenu = "//a[contains(text(),'Auto loans')]";
-    public String TestDriveTitle = "//h2[contains(text(),'Test Drive Our Auto Loan Calculator')]";
-
 
 }

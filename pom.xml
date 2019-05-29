@@ -97,7 +97,7 @@
                 <version>${maven-surefire-version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/java/com/chase/testngxml/VuturePortal.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/java/com/chase/testngxml/ChasePortal.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -129,7 +129,7 @@
                                 <configuration>
                                     <testFailureIgnore>true</testFailureIgnore>
                                     <suiteXmlFiles>
-                                        <suiteXmlFile>src/test/java/com/chase/testngxml/VuturePortal.xml</suiteXmlFile>
+                                        <suiteXmlFile>src/test/java/com/chase/testngxml/ChasePortal.xml</suiteXmlFile>
                                     </suiteXmlFiles>
                                 </configuration>
                             </execution>

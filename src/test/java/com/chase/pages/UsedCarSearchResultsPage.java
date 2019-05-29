@@ -3,6 +3,7 @@ package com.chase.pages;
 
 import com.chase.pageproperties.NewCarSearchResultsPageProperty;
 import com.chase.pageproperties.UsedCarSearchResultsPageProperty;
+import com.chase.testdata.UsedCarSearchResultsPageTestData;
 import com.chase.utility.CommonFunctions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -27,26 +28,35 @@ public class UsedCarSearchResultsPage extends CommonFunctions {
     }
 
     public void verifyThePropertiesOnThePage(){
-        String actualImageLink = getValueOfAttribute(ImageLinkLocator,"src");
-        System.out.println(" %%%%%%%%%%%%%%5 "+actualImageLink);
-        String actualVehicleModel = getAnyTextFromWebPage(VehicleModelLocator);
-        System.out.println(" %%%%%%%%%%%%%%5 "+actualVehicleModel);
-        String actualVehicleMileage = getAnyTextFromWebPage(VehicleMileageLocator);
-        System.out.println(" %%%%%%%%%%%%%%5 "+actualVehicleMileage);
-        String actualVehicleInterior = getAnyTextFromWebPage(VehicleInteriorLocator);
-        System.out.println(" %%%%%%%%%%%%%%5 "+actualVehicleInterior);
-        String actualVehicleExterior = getAnyTextFromWebPage(VehicleExteriorLocator);
-        System.out.println(" %%%%%%%%%%%%%%5 "+actualVehicleExterior);
-        String actualVehiclePrice = getAnyTextFromWebPage(VehiclePriceLocator);
-        System.out.println(" %%%%%%%%%%%%%%5 "+actualVehiclePrice);
+        int resultsCount = getTotalResultsCount(TotalResultsListLocator);
+        System.out.println(" &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& "+resultsCount);
+        if(resultsCount > 0) {
+            //isElementPresentOnWebPage(ImageLinkLocator,"Vehicle Image "," on the Used Car Serach Results Page");
+            isElementPresentOnWebPage(VehicleModelLocator,"Vehicle Model "," on the Used Car Serach Results Page");
+            isElementPresentOnWebPage(VehicleMileageLocator,"Vehicle Mileage "," on the Used Car Serach Results Page");
+            isElementPresentOnWebPage(VehicleInteriorLocator,"Vehicle Interior "," on the Used Car Serach Results Page");
+            isElementPresentOnWebPage(VehicleExteriorLocator,"Vehicle Exterior "," on the Used Car Serach Results Page");
+            isElementPresentOnWebPage(VehiclePriceLocator,"Vehicle Price "," on the Used Car Serach Results Page");
 
-        String expectedShowMessage = "Showing 24 new BMW models. Select a model for pricing details.";
-        String expectedBMWText = "BMW Models";
-        String expectedBMWLogo= "https://static.tcimg.net/vehicles/logo/192x192_full_color/828d494572d571c5/BMW.png";
+        }else{
+            System.out.println("Results count is < 0");
+        }
 
-//        Assert.assertTrue(compareAnyText(actualShowMessage,expectedShowMessage));
-//        Assert.assertTrue(compareAnyText(actualBMWText,expectedBMWText));
-//        Assert.assertTrue(compareAnyText(actualBMWLogo,expectedBMWLogo));
+    }
+
+    public void getCarDetails(){
+        CommonFunctions.actualImageLinkFromUsedCarSearchResultsPage = getValueOfAttribute(ImageLinkLocator, "src");
+        System.out.println(" %%%%%%%%%%%%%%5 " + CommonFunctions.actualImageLinkFromUsedCarSearchResultsPage);
+        CommonFunctions.actualVehicleModelFromUsedCarSearchResultsPage = getAnyTextFromWebPage(VehicleModelLocator);
+        System.out.println(" %%%%%%%%%%%%%%5 " + CommonFunctions.actualVehicleModelFromUsedCarSearchResultsPage);
+        CommonFunctions.actualVehicleMileageFromUsedCarSearchResultsPage = getAnyTextFromWebPage(VehicleMileageLocator);
+        System.out.println(" %%%%%%%%%%%%%%5 " + CommonFunctions.actualVehicleMileageFromUsedCarSearchResultsPage);
+        CommonFunctions.actualVehicleInteriorFromUsedCarSearchResultsPage = getAnyTextFromWebPage(VehicleInteriorLocator);
+        System.out.println(" %%%%%%%%%%%%%%5 " + CommonFunctions.actualVehicleInteriorFromUsedCarSearchResultsPage);
+        CommonFunctions.actualVehicleExteriorFromUsedCarSearchResultsPage = getAnyTextFromWebPage(VehicleExteriorLocator);
+        System.out.println(" %%%%%%%%%%%%%%5 " + CommonFunctions.actualVehicleExteriorFromUsedCarSearchResultsPage);
+        CommonFunctions.actualVehiclePriceFromUsedCarSearchResultsPage = getAnyTextFromWebPage(VehiclePriceLocator);
+        System.out.println(" %%%%%%%%%%%%%%5 " + CommonFunctions.actualVehiclePriceFromUsedCarSearchResultsPage);
     }
 
     public void clickOnFirstCarLink(){

@@ -30,20 +30,21 @@ public class NewCarSearchResultsPage extends CommonFunctions {
 //    }
 
     public void verifyThePropertiesOnThePage(){
-        String actualShowMessage = getAnyTextFromWebPage(ShowMessageLocator);
+//        String actualShowMessage = getAnyTextFromWebPage(ShowMessageLocator);
 //        System.out.println(" %%%%%%%%%%%%%%5 "+actualShowMessage);
-        String actualBMWText = getAnyTextFromWebPage(BMWTextLocator);
+//        String actualBMWText = getAnyTextFromWebPage(BMWTextLocator);
 //        System.out.println(" %%%%%%%%%%%%%%5 "+actualBMWText);
-        String actualBMWLogo = getValueOfAttribute(BMWLogoLocator,"src");
+//        String actualBMWLogo = getValueOfAttribute(BMWLogoLocator,"src");
 //        System.out.println(" %%%%%%%%%%%%%%5 "+actualBMWLogo);
+//        System.out.println(" ======================================================== ");
 
-        String expectedShowMessage = "Showing 24 new BMW models. Select a model for pricing details.";
-        String expectedBMWText = "BMW Models";
-        String expectedBMWLogo= "https://static.tcimg.net/vehicles/logo/192x192_full_color/828d494572d571c5/BMW.png";
+        isElementPresentOnWebPage(ShowMessageLocator,"Results message "," On the New Car Search Results screen");
+        isElementPresentOnWebPage(BMWTextLocator,"BMW Text "," On the New Car Search Results screen");
+        isElementPresentOnWebPage(BMWLogoLocator,"BMW Logo "," On the New Car Search Results screen");
 
-        Assert.assertTrue(compareAnyText(actualShowMessage,expectedShowMessage));
-        Assert.assertTrue(compareAnyText(actualBMWText,expectedBMWText));
-        Assert.assertTrue(compareAnyText(actualBMWLogo,expectedBMWLogo));
+//        Assert.assertTrue(compareAnyText(actualShowMessage,expectedShowMessage));
+//        Assert.assertTrue(compareAnyText(actualBMWText,expectedBMWText));
+//        Assert.assertTrue(compareAnyText(actualBMWLogo,expectedBMWLogo));
 
     }
 
@@ -58,10 +59,10 @@ public class NewCarSearchResultsPage extends CommonFunctions {
     }
 
     public void getDetailsOfCarLink(){
-        String carImage = getValueOfAttribute(CarLinkDetailsLocator,"src");
-        System.out.println(carImage);
-        String carAlt =getValueOfAttribute(CarLinkDetailsLocator,"alt");
-        System.out.println(carAlt);
+        actualVehicleImageFromNewCarSearchResultsPage = getValueOfAttribute(CarLinkDetailsLocator,"src");
+        System.out.println(" &&&&&&&&&&&&&&&&&&&&&& "+actualVehicleImageFromNewCarSearchResultsPage);
+        actualVehicleModelFromNewCarSearchResultsPage =getValueOfAttribute(CarLinkDetailsLocator,"alt");
+        System.out.println(" &&&&&&&&&&&&&&&&&&&&&& "+actualVehicleModelFromNewCarSearchResultsPage);
     }
 
 

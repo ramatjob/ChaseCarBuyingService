@@ -21,7 +21,7 @@ public class NewCarDetailsStepDefinition {
     public void verifyThePageProperties() throws InterruptedException {
         driver = testBase.getDriver();
         newCarDetailsPageObject = new NewCarDetailsPage(driver);
-        newCarDetailsPageObject.getCarDetails();
+        newCarDetailsPageObject.verifyThePageProperties();
     }
 
     @And("^I get the full details of car$")

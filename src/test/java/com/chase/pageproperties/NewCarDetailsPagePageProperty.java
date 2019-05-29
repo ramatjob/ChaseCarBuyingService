@@ -9,7 +9,8 @@ public interface NewCarDetailsPagePageProperty {
     //div[@class='img-container img-container-block']//img
     //div[@data-qa='vehicle-header-vehicle-image']//img
 
-    public String BuildAndPriceButton = "//button[@data-test='vehicleHeaderBuildAndPrice']//div[@class='btn-inner']";
+    public String VehicleImage = "//div[@data-qa='vehicle-header-vehicle-image']/img";
+            //"//button[@data-test='vehicleHeaderBuildAndPrice']//div[@class='btn-inner']";
 
     public String CustomerPrcingButton = "//strong[@class='d-none d-md-inline']";
 

@@ -35,9 +35,9 @@ public class HomePageStepDefinition {
         homePageObject.selectCarMake();
     }
 
-    @And("^I enter a valid ZipCode$")
-    public void enterValidZipcode() throws InterruptedException {
-        homePageObject.enterZipCode();
+    @And("^I enter a valid \"([^\"]*)\"$")
+    public void enterValidZipcode(String zipcode) throws InterruptedException {
+        homePageObject.enterZipCode(zipcode);
     }
 
     @And("^I click on Shop New Cars button$")
@@ -59,9 +59,9 @@ public class HomePageStepDefinition {
     }
 
 
-    @And("^I enter a valid ZipCode for Used car$")
-    public void enterValidZipcodeForUsedCar() throws InterruptedException {
-        homePageObject.enterZipCodeForUsedCar();
+    @And("^I enter a valid \"([^\"]*)\" for Used car$")
+    public void enterValidZipcodeForUsedCar(String zipcode) throws InterruptedException {
+        homePageObject.enterZipCodeForUsedCar(zipcode);
     }
 
 

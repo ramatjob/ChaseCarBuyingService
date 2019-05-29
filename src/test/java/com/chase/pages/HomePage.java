@@ -40,8 +40,8 @@ public class HomePage extends CommonFunctions {
         selectAnyVlueFromDropDown(NewCarSelectMakeDropdownLocator,NewCarMakeNameLocator);
     }
 
-    public void enterZipCode() throws InterruptedException {
-        enterText(NewCarZipcodeBoxLocator,"12345");
+    public void enterZipCode(String zipcode) throws InterruptedException {
+        enterText(NewCarZipcodeBoxLocator,zipcode);
     }
 
     public void clickOnShopNewCarsButton(){
@@ -56,8 +56,8 @@ public class HomePage extends CommonFunctions {
         selectAnyVlueFromDropDown(UsedCarSelectMakeDropdownLocator, UsedCarMakeNameLocator);
     }
 
-    public void enterZipCodeForUsedCar() throws InterruptedException {
-        enterText(UsedCarZipcodeBoxLocator,"12345");
+    public void enterZipCodeForUsedCar(String zipcode) throws InterruptedException {
+        enterText(UsedCarZipcodeBoxLocator,zipcode);
     }
 
 

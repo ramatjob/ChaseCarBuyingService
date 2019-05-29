@@ -21,6 +21,16 @@ public class CommonFunctions {
         this.driver = driver;
     }
 
+    public static String actualImageLinkFromUsedCarSearchResultsPage = "";
+    public static String actualVehicleModelFromUsedCarSearchResultsPage = "";
+    public static String actualVehicleMileageFromUsedCarSearchResultsPage = "";
+    public static String actualVehicleInteriorFromUsedCarSearchResultsPage = "";
+    public static String actualVehicleExteriorFromUsedCarSearchResultsPage = "";
+    public static String actualVehiclePriceFromUsedCarSearchResultsPage = "";
+
+    public static String actualVehicleImageFromNewCarSearchResultsPage = "";
+    public static String actualVehicleModelFromNewCarSearchResultsPage = "";
+
     public void wait_explicit_till_element_loaded(By by){
         WebDriverWait waitnew=new WebDriverWait(driver,20);
         waitnew.until(ExpectedConditions.presenceOfElementLocated(by));
@@ -71,7 +81,7 @@ public class CommonFunctions {
         WebElement subElement = driver.findElement(byProp2);
         Actions actions = new Actions(driver);
         actions.moveToElement(mainElement).click().perform();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         actions.moveToElement(subElement).click().perform();
     }
 
@@ -101,7 +111,19 @@ public class CommonFunctions {
 
     public boolean compareAnyText(String actualString,String expectedString){
         boolean finalResult;
-        if(expectedString.equalsIgnoreCase(actualString)){
+        if(expectedString.trim().equalsIgnoreCase(actualString.trim())){
+            System.out.println("Actual string ("+actualString+")  is matched with the Expected string ("+expectedString+")");
+            finalResult = true;
+        }else{
+            System.out.println("Actual string ("+actualString+")  is not matched with the Expected string ("+expectedString+")");
+            finalResult = false;
+        }
+        return finalResult;
+    }
+
+    public boolean containsAnyText(String actualString,String expectedString){
+        boolean finalResult;
+        if(expectedString.trim().contains(actualString.trim())){
             System.out.println("Actual string ("+actualString+")  is matched with the Expected string ("+expectedString+")");
             finalResult = true;
         }else{

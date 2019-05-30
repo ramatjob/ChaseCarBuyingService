@@ -24,9 +24,9 @@ public class HomePageStepDefinition {
         homePageObject = new HomePage(driver);
     }
 
-    @And("^I verify the \"([^\"]*)\"$")
-    public void verifyLeftSideTitle(String expectedLeftSideTitle) throws InterruptedException {
-        homePageObject.verifyLeftSideTitle(expectedLeftSideTitle);
+    @And("^I verify the objects on the Chase portal home page$")
+    public void verifyLeftSideTitle() throws InterruptedException {
+        homePageObject.verifyLeftSideTitle();
     }
 
     @And("^I select a valid value from Select Make drop down$")

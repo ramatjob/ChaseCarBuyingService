@@ -15,6 +15,8 @@ public class NewCarDetailsPage extends CommonFunctions {
     By MarketAverageValueLocator = By.xpath(NewCarDetailsPagePageProperty.MarketAverageValue);
     By CustomerPricingLinkLocator = By.xpath(NewCarDetailsPagePageProperty.CustomerPricingLink);
     By BuildAndPriceButtonLocator = By.xpath(NewCarDetailsPagePageProperty.BuildAndPriceButton);
+    By ChangeStyleLinkLocator = By.xpath(NewCarDetailsPagePageProperty.ChangeStyleLink);
+
 
     private String carImage="";
     private String carModel="";
@@ -40,17 +42,12 @@ public class NewCarDetailsPage extends CommonFunctions {
     public void verifyThePageProperties() throws InterruptedException {
         wait_implicit_till_window_load();
         isElementPresentOnWebPage(CustomerPrcingButtonLocator,"Customer Pricing button ","On Car Search Detail screen");
-        isElementPresentOnWebPage(CarDetailsHeaderLocator,"Car Details Header ","On Car Search Detail screen");
-        isElementPresentOnWebPage(CarImageLocator,"Car Image ","On Car Search Detail screen");
+        //isElementPresentOnWebPage(CarDetailsHeaderLocator,"Car Details Header ","On Car Search Detail screen");
+        //isElementPresentOnWebPage(CarImageLocator,"Car Image ","On Car Search Detail screen");
         isElementPresentOnWebPage(MSRPValueLocator,"MSRP Value ","On Car Search Detail screen");
         isElementPresentOnWebPage(MarketAverageValueLocator,"Market Average Value ","On Car Search Detail screen");
         isElementPresentOnWebPage(CustomerPricingLinkLocator,"Customer Pricing Link ","On Car Search Detail screen");
-        isElementPresentOnWebPage(BuildAndPriceButtonLocator,"Build And Price Button ","On Car Search Detail screen");
 
-    }
-
-    public void clickOnBuildAndPriceButton(){
-        click(BuildAndPriceButtonLocator);
     }
 
 

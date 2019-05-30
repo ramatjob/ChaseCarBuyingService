@@ -33,11 +33,6 @@ public class NewCarDetailsStepDefinition {
         newCarDetailsPageObject.compareCarImageAndModel();
     }
 
-    @And("^I click on the Build And Price button$")
-    public void clickOnBuildAndPriceButton() throws InterruptedException {
-        newCarDetailsPageObject.clickOnBuildAndPriceButton();
-    }
-
     @And("^I close the browser$")
     public void closeBrowser(){
         testBase.tearDown();

@@ -2,6 +2,7 @@ package com.chase.pages;
 
 
 import com.chase.pageproperties.HomePageProperty;
+import com.chase.testdata.HomePageTestData;
 import com.chase.utility.CommonFunctions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -39,7 +40,7 @@ public class HomePage extends CommonFunctions {
         this.driver = driver;
     }
 
-    public void verifyLeftSideTitle(String expectedLeftSideTitle) throws InterruptedException {
+    public void verifyLeftSideTitle() throws InterruptedException {
         isElementPresentOnWebPage(ChaseSymbolLocator,"Chase symbol"," present on the chase portal home screen");
         isElementPresentOnWebPage(RightSideTitle1Locator,"Right side Title1"," present on the chase portal home screen");
         isElementPresentOnWebPage(RightSideTitle2Locator,"Right side Title2"," present on the chase portal home screen");
@@ -59,7 +60,7 @@ public class HomePage extends CommonFunctions {
         isElementPresentOnWebPage(AutoLoansMenuLocator,"Auto Loans Menu"," present on the chase portal home screen");
 
         String actualLeftSideTitle = getAnyTextFromWebPage(LeftSideTitleLocator);
-        Assert.assertTrue(compareAnyText(actualLeftSideTitle,expectedLeftSideTitle));
+        Assert.assertTrue(compareAnyText(actualLeftSideTitle, HomePageTestData.LeftSideTitle));
     }
 
     public void selectCarMake() throws InterruptedException {
